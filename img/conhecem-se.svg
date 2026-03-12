@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="noite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0d1a"/>
+      <stop offset="100%" stop-color="#1a1a35"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.12)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#noite)"/>
+  <rect width="800" height="500" fill="url(#aura)"/>
+  <!-- estrelas -->
+  <circle cx="100" cy="60" r="1" fill="#c9a84c" opacity="0.4"/>
+  <circle cx="300" cy="40" r="1.2" fill="#e0c068" opacity="0.3"/>
+  <circle cx="600" cy="80" r="1" fill="#c9a84c" opacity="0.5"/>
+  <circle cx="700" cy="50" r="0.8" fill="#e0c068" opacity="0.3"/>
+  <circle cx="500" cy="30" r="1" fill="#c9a84c" opacity="0.4"/>
+  <!-- chão / rua -->
+  <rect x="0" y="380" width="800" height="120" fill="#151525"/>
+  <rect x="0" y="378" width="800" height="4" fill="#2a2548"/>
+  <!-- Blimunda (à esquerda, revelando o dom) -->
+  <circle cx="320" cy="240" r="28" fill="#dfc06a"/>
+  <rect x="305" y="268" width="30" height="60" fill="#6a3a4a" rx="4"/>
+  <rect x="293" y="328" width="14" height="45" fill="#6a3a4a" rx="3"/>
+  <rect x="323" y="328" width="14" height="45" fill="#6a3a4a" rx="3"/>
+  <!-- olhos brilhantes (o dom) -->
+  <circle cx="312" cy="236" r="4" fill="#0d0d1a"/>
+  <circle cx="328" cy="236" r="4" fill="#0d0d1a"/>
+  <circle cx="313" cy="235" r="1.5" fill="#c9a84c"/>
+  <circle cx="329" cy="235" r="1.5" fill="#c9a84c"/>
+  <!-- raios do olhar (o dom de ver por dentro) -->
+  <line x1="312" y1="232" x2="290" y2="210" stroke="#c9a84c" stroke-width="0.8" opacity="0.3"/>
+  <line x1="328" y1="232" x2="350" y2="210" stroke="#c9a84c" stroke-width="0.8" opacity="0.3"/>
+  <line x1="320" y1="230" x2="320" y2="200" stroke="#c9a84c" stroke-width="0.8" opacity="0.3"/>
+  <!-- mão direita estendida -->
+  <line x1="335" y1="285" x2="370" y2="275" stroke="#dfc06a" stroke-width="5" stroke-linecap="round"/>
+  <!-- Baltasar (à direita) -->
+  <circle cx="480" cy="245" r="28" fill="#c9a84c"/>
+  <rect x="465" y="273" width="30" height="58" fill="#3d4a60" rx="4"/>
+  <rect x="453" y="331" width="14" height="42" fill="#3d4a60" rx="3"/>
+  <rect x="483" y="331" width="14" height="42" fill="#3d4a60" rx="3"/>
+  <!-- olhos -->
+  <circle cx="472" cy="241" r="3.5" fill="#0d0d1a"/>
+  <circle cx="488" cy="241" r="3.5" fill="#0d0d1a"/>
+  <!-- braço com gancho -->
+  <line x1="465" y1="290" x2="430" y2="280" stroke="#3d4a60" stroke-width="5" stroke-linecap="round"/>
+  <path d="M428 279 Q422 286 428 290" stroke="#aaa" stroke-width="2.5" fill="none"/>
+  <!-- braço direito -->
+  <line x1="495" y1="288" x2="520" y2="300" stroke="#3d4a60" stroke-width="5" stroke-linecap="round"/>
+  <!-- mãos quase tocando (espaço simbólico) -->
+  <circle cx="400" cy="278" r="20" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.25" stroke-dasharray="3 3"/>
+  <!-- vontade simbólica (esfera translúcida) -->
+  <circle cx="400" cy="230" r="15" fill="rgba(201,168,76,0.08)" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+  <circle cx="400" cy="230" r="6" fill="rgba(201,168,76,0.15)"/>
+</svg>

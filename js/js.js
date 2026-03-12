@@ -1,4 +1,4 @@
-// ===== MEMORIAL DO CONVENTO — Motor de Navegação =====
+// ===== AMOR E CUMPLICIDADE — Motor de Navegação =====
 
 document.addEventListener("DOMContentLoaded", () => {
     const paginas = document.querySelectorAll(".pagina");
@@ -23,9 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function irParaPagina(indice) {
         if (indice < 0 || indice >= paginas.length) return;
-        paginas[paginaAtual].classList.remove("ativa");
+
+        const anterior = paginas[paginaAtual];
+        anterior.classList.remove("ativa");
+
         paginaAtual = indice;
-        paginas[paginaAtual].classList.add("ativa");
+        const nova = paginas[paginaAtual];
+        nova.classList.add("ativa");
+
+        // Scroll to top da nova página
+        nova.scrollTop = 0;
+
         atualizarIndicadores();
         atualizarProgresso();
     }
@@ -54,22 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== Hotspots nas imagens (SVG) =====
     document.querySelectorAll(".hotspot").forEach(hotspot => {
         hotspot.addEventListener("click", () => {
-            // Animação de feedback visual
             const container = hotspot.closest(".imagem-container");
             const dica = container.querySelector(".hotspot-dica");
+
+            // Feedback visual no hotspot
             if (dica) {
                 dica.style.animation = "none";
+                dica.style.borderColor = "#4caf50";
+                dica.style.background = "rgba(76,175,80,0.2)";
+                dica.style.transform = "translate(-50%, -50%) scale(1.8)";
                 dica.style.opacity = "0";
             }
-            // Pequeno delay para feedback visual antes de avançar
-            container.style.transition = "transform 0.3s, opacity 0.3s";
+
+            // Brilho na imagem
+            container.style.transition = "box-shadow 0.4s ease, transform 0.4s ease";
+            container.style.boxShadow = "0 0 40px rgba(201,168,76,0.4)";
             container.style.transform = "scale(1.02)";
-            container.style.opacity = "0.8";
+
             setTimeout(() => {
+                container.style.boxShadow = "";
                 container.style.transform = "";
-                container.style.opacity = "";
                 proximaPagina();
-            }, 400);
+            }, 500);
         });
     });
 
@@ -87,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const correta = opcao.dataset.correta === "true";
 
-                // Desativar todas as opções
                 opcoes.forEach(o => {
                     o.disabled = true;
                     if (o.dataset.correta === "true") {
@@ -97,16 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (correta) {
                     opcao.classList.add("correta");
-                    feedback.textContent = "Correto! 🎉";
+                    feedback.textContent = "Correto! Muito bem!";
                     feedback.className = "feedback correto";
                     pontuacao++;
                 } else {
                     opcao.classList.add("errada");
-                    feedback.textContent = "Não é bem isso... Vê a resposta correta.";
+                    feedback.textContent = "Não é bem isso... Vê a resposta correta a verde.";
                     feedback.className = "feedback incorreto";
                 }
 
-                // Mostrar botão continuar
                 if (btnContinuar) {
                     btnContinuar.classList.add("visivel");
                 }
@@ -121,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== Botão recomeçar =====
     document.querySelectorAll(".btn-recomecar").forEach(btn => {
         btn.addEventListener("click", () => {
-            // Reset perguntas
             document.querySelectorAll(".pergunta-container").forEach(container => {
                 const opcoes = container.querySelectorAll(".opcao");
                 const feedback = container.querySelector(".feedback");
@@ -140,6 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".hotspot-dica").forEach(d => {
                 d.style.animation = "";
                 d.style.opacity = "";
+                d.style.borderColor = "";
+                d.style.background = "";
+                d.style.transform = "";
             });
             pontuacao = 0;
             irParaPagina(0);
@@ -150,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function mostrarResultado() {
         const elResultado = document.querySelector(".resultado");
         if (elResultado && totalPerguntas > 0) {
-            elResultado.textContent = `Acertaste ${pontuacao} de ${totalPerguntas} perguntas!`;
+            elResultado.textContent = "Acertaste " + pontuacao + " de " + totalPerguntas + " pergunta" + (totalPerguntas !== 1 ? "s" : "") + "!";
         }
     }
 

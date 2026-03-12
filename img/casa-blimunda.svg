@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="interior" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1830"/>
+      <stop offset="100%" stop-color="#2a2240"/>
+    </linearGradient>
+    <radialGradient id="vela-luz" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.15)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#interior)"/>
+  <rect width="800" height="500" fill="url(#vela-luz)"/>
+  <!-- paredes -->
+  <line x1="100" y1="80" x2="100" y2="420" stroke="#2d2548" stroke-width="3"/>
+  <line x1="700" y1="80" x2="700" y2="420" stroke="#2d2548" stroke-width="3"/>
+  <line x1="100" y1="80" x2="700" y2="80" stroke="#2d2548" stroke-width="3"/>
+  <!-- chão -->
+  <rect x="100" y="380" width="600" height="40" fill="#1a1530"/>
+  <!-- mesa -->
+  <rect x="300" y="280" width="200" height="12" fill="#4a3a2a" rx="2"/>
+  <rect x="320" y="292" width="8" height="60" fill="#3d2e20"/>
+  <rect x="472" y="292" width="8" height="60" fill="#3d2e20"/>
+  <!-- tigela na mesa -->
+  <ellipse cx="400" cy="275" rx="30" ry="10" fill="#5a4a3a" stroke="#6a5a4a" stroke-width="1"/>
+  <ellipse cx="400" cy="272" rx="26" ry="7" fill="#3d2e20"/>
+  <!-- colher (símbolo central!) -->
+  <line x1="385" y1="268" x2="370" y2="252" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="367" cy="249" rx="5" ry="3.5" fill="#c9a84c" transform="rotate(-30 367 249)"/>
+  <!-- vela -->
+  <rect x="395" y="220" width="10" height="30" fill="#e8dfd0"/>
+  <ellipse cx="400" cy="218" rx="5" ry="8" fill="#c9a84c" opacity="0.8"/>
+  <ellipse cx="400" cy="215" rx="3" ry="5" fill="#e0c068"/>
+  <!-- Blimunda (sentada à esquerda) -->
+  <circle cx="340" cy="245" r="18" fill="#dfc06a"/>
+  <rect x="330" y="263" width="20" height="35" fill="#6a3a4a" rx="3"/>
+  <circle cx="335" cy="243" r="2" fill="#0d0d1a"/>
+  <circle cx="345" cy="243" r="2" fill="#0d0d1a"/>
+  <!-- braço estendido para colher -->
+  <line x1="350" y1="275" x2="375" y2="260" stroke="#dfc06a" stroke-width="4" stroke-linecap="round"/>
+  <!-- Baltasar (sentado à direita) -->
+  <circle cx="460" cy="247" r="18" fill="#c9a84c"/>
+  <rect x="450" y="265" width="20" height="35" fill="#3d4a60" rx="3"/>
+  <circle cx="455" cy="245" r="2" fill="#0d0d1a"/>
+  <circle cx="465" cy="245" r="2" fill="#0d0d1a"/>
+  <!-- braço e gancho -->
+  <line x1="450" y1="278" x2="425" y2="265" stroke="#3d4a60" stroke-width="4" stroke-linecap="round"/>
+  <path d="M423 264 Q418 270 424 273" stroke="#aaa" stroke-width="2" fill="none"/>
+  <!-- janela com lua -->
+  <rect x="560" y="120" width="80" height="100" fill="#0d0d1a" rx="3" stroke="#2d2548" stroke-width="2"/>
+  <rect x="599" y="120" width="2" height="100" fill="#2d2548"/>
+  <rect x="560" y="168" width="80" height="2" fill="#2d2548"/>
+  <circle cx="585" cy="148" r="12" fill="#dfc06a" opacity="0.3"/>
+  <!-- porta (fundo) -->
+  <rect x="150" y="210" width="60" height="170" fill="#151225" rx="3" stroke="#2d2548" stroke-width="1.5"/>
+</svg>

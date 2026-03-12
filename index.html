@@ -3,70 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorial do Convento</title>
+    <title>Amor e Cumplicidade — Memorial do Convento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Barra de progresso -->
     <div class="barra-progresso" style="width: 0%"></div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 0 — CAPA / INTRO        -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 0 — CAPA                          -->
+    <!-- ======================================== -->
     <div class="pagina pagina-intro ativa" id="pagina-0">
-        <h1>Memorial do Convento</h1>
-        <p class="subtitulo">Uma viagem interativa pela obra de José Saramago</p>
+        <div class="icone-intro">&#10084;</div>
+        <h1>Amor e Cumplicidade</h1>
+        <p class="subtitulo">Blimunda &amp; Baltasar</p>
+        <p class="descricao-intro">
+            Vamos descobrir como Blimunda e Baltasar se relacionam no Memorial do Convento. 
+            Um percurso pelos vários acontecimentos da sua história — cada página revela uma imagem com um símbolo escondido. 
+            Encontra-o para desbloquear o próximo capítulo.
+        </p>
         <button class="btn-comecar">Começar a Viagem</button>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 1 — SUBTEMA: IMAGEM     -->
-    <!-- (Clica num ponto da imagem)     -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 1 — AUTO DE FÉ (pergunta)         -->
+    <!-- ======================================== -->
     <div class="pagina" id="pagina-1">
         <div class="pagina-conteudo">
-            <h2>A Construção do Convento de Mafra</h2>
+            <p class="capitulo-num">Capítulo I</p>
+            <h2>Auto de Fé</h2>
+            <hr class="separador">
+
+            <div class="imagem-container">
+                <img src="img/auto-de-fe.svg" alt="Auto de Fé">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="42" y="55" width="16" height="18" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 50%; top: 64%;"></div>
+            </div>
+
+            <div class="contexto-historico">
+                <p class="label">Contexto Histórico</p>
+                <p>Um auto de fé era uma cerimónia pública da Inquisição, em que pessoas acusadas de heresia ou feitiçaria eram julgadas. Podiam ser condenadas a penas severas, incluindo degredo ou execução.</p>
+            </div>
+
             <p class="texto">
-                D. João V prometeu erguer um convento em Mafra se a rainha lhe desse um herdeiro. 
-                A promessa cumpriu-se, e com ela nasceu uma das maiores obras do barroco português.
+                Blimunda e Baltasar conhecem-se neste evento. A mãe de Blimunda é condenada pela Inquisição ao degredo em Angola. Entre olhares e algumas palavras, surge a primeira ligação entre os dois.
             </p>
 
-            <!-- Imagem com hotspot SVG -->
-            <div class="imagem-container">
-                <!-- Substitui pelo caminho da tua imagem -->
-                <img src="img/convento-mafra.svg" alt="Convento de Mafra">
-
-                <!-- SVG overlay com área clicável -->
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <!-- Hotspot: área clicável (ajusta x, y, width, height em %) -->
-                    <rect class="hotspot" x="40" y="30" width="20" height="25" rx="3" />
-                </svg>
-
-                <!-- Indicador visual a pulsar (posição CSS em %) -->
-                <div class="hotspot-dica" style="left: 50%; top: 42%;"></div>
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>Procura o olhar que tudo vê entre a multidão...</span>
             </div>
-            <p class="instrucao-hotspot">Toca no ponto a brilhar na imagem para continuar...</p>
+
+            <p class="instrucao-hotspot">Encontra o símbolo na imagem para avançar</p>
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 2 — SUBTEMA: PERGUNTA   -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PERGUNTA — AUTO DE FÉ                    -->
+    <!-- ======================================== -->
     <div class="pagina" id="pagina-2">
         <div class="pagina-conteudo">
-            <h2>A Promessa do Rei</h2>
+            <p class="capitulo-num">Capítulo I — Questão</p>
+            <h2>Auto de Fé</h2>
+            <hr class="separador">
+
             <p class="texto">
-                A construção do Convento de Mafra foi resultado de uma promessa real.
+                Blimunda e Baltasar trocam olhares pela primeira vez neste evento, onde a mãe de Blimunda estava a ser condenada.
             </p>
 
             <div class="pergunta-container">
-                <p class="pergunta-texto">Que promessa fez D. João V?</p>
+                <p class="pergunta-texto">Que evento é este?</p>
                 <div class="opcoes">
-                    <button class="opcao" data-correta="false">Construir uma ponte sobre o Tejo</button>
-                    <button class="opcao" data-correta="true">Erguer um convento se tivesse um herdeiro</button>
-                    <button class="opcao" data-correta="false">Financiar uma expedição marítima</button>
-                    <button class="opcao" data-correta="false">Construir um palácio em Lisboa</button>
+                    <button class="opcao" data-correta="true">Auto de fé</button>
+                    <button class="opcao" data-correta="false">Inquisição Espanhola</button>
+                    <button class="opcao" data-correta="false">Festa dos Santos</button>
+                    <button class="opcao" data-correta="false">Deportação Brasileira</button>
                 </div>
                 <p class="feedback"></p>
                 <button class="btn-continuar">Continuar →</button>
@@ -74,108 +90,238 @@
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 3 — SUBTEMA: IMAGEM     -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 3 — COMO SE CONHECEM              -->
+    <!-- ======================================== -->
     <div class="pagina" id="pagina-3">
         <div class="pagina-conteudo">
-            <h2>Baltasar e Blimunda</h2>
-            <p class="texto">
-                Baltasar Sete-Sóis e Blimunda são o coração da narrativa. 
-                O amor deles contrasta com a grandiosidade fria do projeto real.
-            </p>
+            <p class="capitulo-num">Capítulo II</p>
+            <h2>Como se Conhecem</h2>
+            <hr class="separador">
 
             <div class="imagem-container">
-                <img src="img/baltasar-blimunda.svg" alt="Baltasar e Blimunda">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <rect class="hotspot" x="20" y="35" width="25" height="30" rx="3" />
+                <img src="img/conhecem-se.svg" alt="Blimunda revela o seu dom a Baltasar">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="38" y="30" width="24" height="20" rx="2" />
                 </svg>
-                <div class="hotspot-dica" style="left: 32%; top: 50%;"></div>
+                <div class="hotspot-dica" style="left: 50%; top: 40%;"></div>
             </div>
-            <p class="instrucao-hotspot">Encontra o ponto simbólico na imagem...</p>
+
+            <p class="texto">
+                Após o auto de fé, Blimunda revela a Baltasar o seu dom de olhar por dentro das pessoas e recolher as suas vontades, e ele, um soldado maneta, demonstra respeito e compreensão. O encontro estabelece a base da cumplicidade entre ambos.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>A mão que falta encontra outra que vê além...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Encontra o símbolo escondido na imagem</p>
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 4 — SUBTEMA: PERGUNTA   -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 4 — CASA DE BLIMUNDA              -->
+    <!-- ======================================== -->
     <div class="pagina" id="pagina-4">
         <div class="pagina-conteudo">
-            <h2>As Personagens</h2>
+            <p class="capitulo-num">Capítulo III</p>
+            <h2>Casa de Blimunda</h2>
+            <hr class="separador">
 
-            <div class="pergunta-container">
-                <p class="pergunta-texto">Qual é a capacidade especial de Blimunda?</p>
-                <div class="opcoes">
-                    <button class="opcao" data-correta="false">Prever o futuro através dos sonhos</button>
-                    <button class="opcao" data-correta="false">Curar doenças com ervas</button>
-                    <button class="opcao" data-correta="true">Ver o interior das pessoas em jejum</button>
-                    <button class="opcao" data-correta="false">Comunicar com os mortos</button>
-                </div>
-                <p class="feedback"></p>
-                <button class="btn-continuar">Continuar →</button>
+            <div class="imagem-container">
+                <img src="img/casa-blimunda.svg" alt="Casa de Blimunda — a colher partilhada">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="40" y="50" width="20" height="18" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 50%; top: 59%;"></div>
             </div>
+
+            <p class="texto">
+                Na casa de Blimunda, ambos comem da mesma colher, simbolizando união e intimidade. O padre Bartolomeu decide casá-los, confirmando uma relação espontânea.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>Uma colher partilhada vale mais que mil juras...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Encontra o objeto simbólico na imagem</p>
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 5 — SUBTEMA: IMAGEM     -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 5 — CASAMENTO                     -->
+    <!-- ======================================== -->
     <div class="pagina" id="pagina-5">
         <div class="pagina-conteudo">
-            <h2>A Passarola de Bartolomeu de Gusmão</h2>
+            <p class="capitulo-num">Capítulo IV</p>
+            <h2>Casamento</h2>
+            <hr class="separador">
+
+            <div class="imagem-container">
+                <img src="img/casamento.svg" alt="Casamento de Blimunda e Baltasar">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="38" y="32" width="24" height="22" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 50%; top: 43%;"></div>
+            </div>
+
             <p class="texto">
-                O Padre Bartolomeu de Gusmão sonha com uma máquina voadora — a Passarola. 
-                Com a ajuda de Baltasar e Blimunda, o sonho ganha asas.
+                O casamento reforça a liberdade e autenticidade da relação. Diferente dos casamentos burocráticos da época, como o de D. João V e D. Maria Ana, este é baseado em amor genuíno.
             </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>O verdadeiro laço não precisa de coroa...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Toca no símbolo de união para continuar</p>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- PÁGINA 6 — CONSTRUÇÃO DA PASSAROLA       -->
+    <!-- ======================================== -->
+    <div class="pagina" id="pagina-6">
+        <div class="pagina-conteudo">
+            <p class="capitulo-num">Capítulo V</p>
+            <h2>Construção da Passarola</h2>
+            <hr class="separador">
 
             <div class="imagem-container">
                 <img src="img/passarola.svg" alt="A Passarola">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <rect class="hotspot" x="35" y="20" width="30" height="25" rx="3" />
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="35" y="18" width="30" height="22" rx="2" />
                 </svg>
-                <div class="hotspot-dica" style="left: 50%; top: 32%;"></div>
+                <div class="hotspot-dica" style="left: 50%; top: 29%;"></div>
             </div>
-            <p class="instrucao-hotspot">Toca na Passarola para voar para a próxima página...</p>
+
+            <p class="texto">
+                Blimunda e Baltasar constroem juntos a Passarola. Blimunda recolhe 2000 vontades, enquanto Baltasar se encarrega da parte física. Este projeto comum mostra a cooperação e cumplicidade do casal.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>O sonho que voa nasce de duas mãos e duas vontades...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Toca na Passarola para voar ao próximo capítulo</p>
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA 6 — SUBTEMA: PERGUNTA   -->
-    <!-- ============================== -->
-    <div class="pagina" id="pagina-6">
+    <!-- ======================================== -->
+    <!-- PÁGINA 7 — DESAPARECIMENTO DE BALTASAR   -->
+    <!-- ======================================== -->
+    <div class="pagina" id="pagina-7">
         <div class="pagina-conteudo">
-            <h2>O Sonho e a Realidade</h2>
+            <p class="capitulo-num">Capítulo VI</p>
+            <h2>Desaparecimento de Baltasar</h2>
+            <hr class="separador">
 
-            <div class="pergunta-container">
-                <p class="pergunta-texto">Quem idealiza a Passarola na obra?</p>
-                <div class="opcoes">
-                    <button class="opcao" data-correta="false">D. João V</button>
-                    <button class="opcao" data-correta="false">Baltasar Sete-Sóis</button>
-                    <button class="opcao" data-correta="true">Padre Bartolomeu de Gusmão</button>
-                    <button class="opcao" data-correta="false">Domenico Scarlatti</button>
-                </div>
-                <p class="feedback"></p>
-                <button class="btn-continuar">Continuar →</button>
+            <div class="imagem-container">
+                <img src="img/desaparecimento.svg" alt="Baltasar desaparece com a Passarola">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="55" y="15" width="20" height="20" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 65%; top: 25%;"></div>
             </div>
+
+            <p class="texto">
+                Baltasar desaparece com a Passarola. Blimunda, cheia de esperança e amor, inicia uma procura incansável durante nove anos.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>O que voa para longe deixa sempre um rastro no coração...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Onde desapareceu Baltasar? Toca no símbolo...</p>
         </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- PÁGINA FINAL — RESULTADO       -->
-    <!-- ============================== -->
+    <!-- ======================================== -->
+    <!-- PÁGINA 8 — PROCURA DE BALTASAR           -->
+    <!-- ======================================== -->
+    <div class="pagina" id="pagina-8">
+        <div class="pagina-conteudo">
+            <p class="capitulo-num">Capítulo VII</p>
+            <h2>Procura de Baltasar</h2>
+            <hr class="separador">
+
+            <div class="imagem-container">
+                <img src="img/procura.svg" alt="Blimunda procura Baltasar durante nove anos">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="25" y="40" width="18" height="22" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 34%; top: 51%;"></div>
+            </div>
+
+            <p class="texto">
+                Durante a procura, Blimunda enfrenta desafios e percorre diversos caminhos, mantendo sempre a fé no reencontro e demonstrando a força do amor e da lealdade, mesmo à distância.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>Nove anos de caminhos, um único destino...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Segue os passos de Blimunda na imagem...</p>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- PÁGINA 9 — BALTASAR NO AUTO DE FÉ        -->
+    <!-- ======================================== -->
+    <div class="pagina" id="pagina-9">
+        <div class="pagina-conteudo">
+            <p class="capitulo-num">Capítulo VIII</p>
+            <h2>Baltasar no Auto de Fé</h2>
+            <hr class="separador">
+
+            <div class="imagem-container">
+                <img src="img/auto-fe-final.svg" alt="Baltasar condenado no auto de fé final">
+                <svg class="overlay-hotspot" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <rect class="hotspot" x="42" y="38" width="16" height="20" rx="2" />
+                </svg>
+                <div class="hotspot-dica" style="left: 50%; top: 48%;"></div>
+            </div>
+
+            <p class="texto">
+                Baltasar é encontrado a ser condenado num auto de fé e, nesse momento final, Blimunda mantém-se fiel à promessa que lhe tinha feito, recolhendo a sua vontade antes da morte e nunca utilizando o seu dom contra ele.
+            </p>
+
+            <div class="pista">
+                <span class="pista-icon">&#128270;</span>
+                <span>A última vontade recolhida é a mais preciosa de todas...</span>
+            </div>
+
+            <p class="instrucao-hotspot">Toca no último gesto de amor...</p>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- PÁGINA FINAL — REFLEXÃO                  -->
+    <!-- ======================================== -->
     <div class="pagina pagina-final" id="pagina-final">
         <div class="pagina-conteudo">
-            <h2>Viagem Completa!</h2>
+            <h2>Viagem Completa</h2>
+            <hr class="separador">
             <p class="resultado"></p>
-            <p class="mensagem-final">
-                "Além da vontade, que essa era a mais forte de todas, de não se baixar ao peso desmedido."<br>
-                — José Saramago
+
+            <p class="reflexao">
+                No final da obra, percebemos que o amor de Blimunda e Baltasar é mais do que uma simples relação: é uma forma de resistência num mundo dominado pelo poder, pela desigualdade e pela imposição social. Enquanto o casamento de D. João V e D. Maria Ana representa interesses e conveniências, o deles nasce da escolha, da confiança e da entrega total. Mesmo perante a dor, a separação e a morte, mantêm-se fiéis um ao outro.
             </p>
+
+            <p class="mensagem-final">
+                "Assim, Saramago mostra-nos que o amor verdadeiro pode tornar-se uma utopia possível — não porque o mundo mude, mas porque duas pessoas decidem viver de forma diferente dentro dele."
+            </p>
+
             <button class="btn-recomecar">Recomeçar ↺</button>
         </div>
     </div>
 
-    <!-- Indicadores de página (bolinhas) -->
+    <!-- Indicadores de página -->
     <div class="indicadores"></div>
 
     <script src="js/js.js"></script>
