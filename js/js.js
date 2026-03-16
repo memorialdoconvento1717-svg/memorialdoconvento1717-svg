@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const paginas = document.querySelectorAll(".pagina");
     const indicadoresContainer = document.querySelector(".indicadores");
     const barraProgresso = document.querySelector(".barra-progresso");
+    const FALLBACK_IMAGEM = "img/convento-mafra.png";
     const CLASSE_ATIVA = "ativa";
     const CLASSE_FOCO = "em-foco";
     let paginaAtual = 0;
@@ -76,6 +77,37 @@ document.addEventListener("DOMContentLoaded", () => {
         barraProgresso.style.width = percentagem + "%";
     }
 
+    function configurarFallbackDeImagens() {
+        document.querySelectorAll(".imagem-container img").forEach((img) => {
+            img.loading = "eager";
+            img.decoding = "async";
+            img.addEventListener("error", () => {
+                if (img.dataset.fallbackAplicado === "true") return;
+                img.dataset.fallbackAplicado = "true";
+                img.src = FALLBACK_IMAGEM;
+                img.alt = "Imagem indisponível. Foi carregada uma alternativa.";
+            });
+        });
+    }
+
+    function configurarBotaoSair() {
+        document.querySelectorAll(".btn-sair").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const confirmar = window.confirm("Queres mesmo sair deste website?");
+                if (!confirmar) return;
+
+                // Em varios browsers, fechar separadores nao abertos por script pode ser bloqueado.
+                window.close();
+
+                setTimeout(() => {
+                    if (!document.hidden) {
+                        window.location.href = "about:blank";
+                    }
+                }, 250);
+            });
+        });
+    }
+
     // ===== Botão "Começar" =====
     document.querySelectorAll(".btn-comecar").forEach(btn => {
         btn.addEventListener("click", () => proximaPagina());
@@ -145,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     pontuacao++;
                 } else {
                     opcao.classList.add("errada");
-                    feedback.textContent = "Não é bem isso... Vê a resposta correta a verde.";
+                    feedback.textContent = "Não é bem isso... a resposta correta está a verde.";
                     feedback.className = "feedback incorreto";
                 }
 
@@ -211,6 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Inicializar
+    configurarFallbackDeImagens();
+    configurarBotaoSair();
     marcarPaginaEmFoco(paginas[paginaAtual]);
     atualizarProgresso();
 });
